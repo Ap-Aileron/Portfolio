@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .tab-header {
+            display: flex;
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-header div {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tab-header div:hover {
+            background-color: #e1e1e1;
+        }
+        .tab-header div.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 2rem;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-tag {
+            background-color: #007bff;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .project {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tab-header">
+            <div class="active" data-tab="about">About</div>
+            <div data-tab="skills">Skills</div>
+            <div data-tab="projects">Projects</div>
+            <div data-tab="contact">Contact</div>
+
+        </div>
+
+        </div>
+
+        <div id="about" class="tab-content active">
+            <h1>About me:</h1>
+            <h2>QOL Developer (Quality of Life)</h2>
+            <p>Hello fellow reader. I go by 'pzcax', 'Peter', or 'Guy'. I am a passionate developer with 2+ years of experience creating QOL web applications. Specialized in building scalable digital solutions that solve people's basic problems.</p>
+        </div>
+
+        <div id="skills" class="tab-content">
+            <h2>Technical Skills/Languages used</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Java Script</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Lua/Luau</span>
+                <span class="skill-tag">HTML</span>
+            </div>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Featured Projects</h2>
+            <div class="project">
+                <h3>Roblox ER:LC Mouse Driving</h3>
+                <p>The popular Roblox game ER:LC had no way to smoothly drive, so I solved it myself using Python. (Github)</p>
+            </div>
+            <div class="project">
+                <h3>Spectrum Studios</h3>
+                <p>I currently run a Minecraft texture pack/development studio/community, where people can get straight to the texture packs without ads.</p>
+            </div>
+
+            <div class="project">
+                <h3>Ban Tracker (Minecraft)</h3>
+                <p>Ban Tracker is integrated within Spectrum Studios. There is a free/paid version with sales. This helps people track what accounts they are banned on, and for how long. This doubles as an account manager for any service.</p>
+            </div>
+
+            <div class="project">
+                <h3>Ultimate Clicker (Roblox)</h3>
+                <p>My first game that I made on Roblox was Ultimate Clicker. This game was mediocre at best, but still good for the skill level I used to posses. I am now much better but don't have anything to show for it. This game is finished/discontinued.</p>
+            </div>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2>Contact Me</h2>
+            <p>Email: No useable e-mail</p>
+            <p>Discord: pzcax</p>
+            <p>GitHub: @Ap-Aileron (Most of my programs should be in Github)</p>
+        </div>
+        
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-header div').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and tab contents
+                document.querySelectorAll('.tab-header div').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
